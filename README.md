@@ -68,23 +68,23 @@ n'est qu'un moyen parmis beaucoup d'autres.
 
 ## Fonctionnalités attendues / checklist
 
-- [ ] La page a un titre
-- [ ] La page a un pied de page, avec au moins un lien vers le dépôt de code
-- [ ] Le titre de l'APOD est présent
-- [ ] La date de l'APOD est présente
-- [ ] La description de l'APOD est présente
-- [ ] Le copyright de l'APOD est présent ([info](https://github.com/nasa/apod-api#copyright))
+- [x] La page a un titre
+- [x] La page a un pied de page, avec au moins un lien vers le dépôt de code
+- [x] Le titre de l'APOD est présent
+- [x] La date de l'APOD est présente
+- [x] La description de l'APOD est présente
+- [x] Le copyright de l'APOD est présent ([info](https://github.com/nasa/apod-api#copyright))
 - [ ] Le média est affiché. Il peut s'agir :
   - [ ] D'une image, qui offrira un lien vers sa version HD
   - [ ] D'une vidéo, qui offrira un player pour la visionner
-- [ ] Des boutons suivant et précédent sont présents
-   - [ ] Le bouton précédent est un lien vers l'image du jour précédent
-   - [ ] Le bouton suivant est un lien vers l'image du lendemain, mais n'est pas  
+- [x] Des boutons suivant et précédent sont présents
+   - [x] Le bouton précédent est un lien vers l'image du jour précédent
+   - [x] Le bouton suivant est un lien vers l'image du lendemain, mais n'est pas  
          cliquable si l'APOD est celui d'aujourd'hui
-- [ ] Les balises [meta](https://developer.mozilla.org/fr/docs/Web/HTML/Element/meta)
+- [x] Les balises [meta](https://developer.mozilla.org/fr/docs/Web/HTML/Element/meta)
       (notamment `description`, `author` et `keywords`) sont renseignées dans le
       `<head>` de la page HTML
-- [ ] Le titre de la page (`<title>`) affiche un texte avec la date (par exemple
+- [x] Le titre de la page (`<title>`) affiche un texte avec la date (par exemple
       "Kata APOD 2024-09-10")
 
 ### Bonus

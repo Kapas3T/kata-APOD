@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    text-align: center;
+    margin: 10px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.footer-text{
+    text-align: center;
+    font-size: 15;
+    padding: 10px;
+    margin: 2px;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: center;
+}
+
+.previousarrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nextarrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainmediabox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    text-align: center;
+    justify-content: center;
+}
+
+.description-wrapper {
+   max-width:1200px;
+   display: inline-block;
+}
+
+.info-description {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
