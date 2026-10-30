@@ -1,0 +1,21 @@
+<body>
+    <button class="open-settings">Hello!</button>
+
+    <div class="settings-content hidden-settings">
+        <div class="settings-header">
+            <h3>Settings</h3>
+            <button class="close-settings">&times;</button>
+        </div>
+
+        <div class="settings-body">
+            <form method="post" action="setting.js">
+                <label id="APIkeySetting">Your NASA APOD API Key :</label>
+                <input type="text"> <br>
+                <button type="submit">Apply</button>
+            </form>
+        </div>
+    </div> 
+
+    <div class="blur-bg hidden-blur"></div>
+    <script src="script.js"></script>
+</body>

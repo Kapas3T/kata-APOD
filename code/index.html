@@ -28,8 +28,10 @@
                 <div class="previousarrow">
                     <input type="image" id="leftbtn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" height="50" onclick="prevImg()"/>
                 </div>
-                <div class="mainmediabox">
-                    <a id="imagelink" href="https://google.com"><img id="media-image" src="https://assets.farmsanctuary.org/content/uploads/2025/07/02151228/2024_06-16_FSNY_Olive_cow_LH_8974-1600x1067.jpg" width="700"/></a>
+                <div class="mainmediabox" id="mediaboxid">
+                    <div class="imgwrapper">
+                        <a id="imagelink" href="https://google.com"><img id="media-image" src="https://assets.farmsanctuary.org/content/uploads/2025/07/02151228/2024_06-16_FSNY_Olive_cow_LH_8974-1600x1067.jpg" width="700"/></a>
+                    </div>
                 </div>
                 <div class="nextarrow">
                     <input type="image" id="rightbtn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" height="50" style="transform: rotate(180deg)" onclick="nextImg()"/>
@@ -55,6 +57,9 @@
         </div>
 
         <div class="footer">
+            <div class="footer-customapikeybutton">
+                <button type="button" onclick="addApiKey()">Use my own API Key</button>
+            </div>
             <p class="footer-text">The image you are seeing on the srceen was taken by NASA.
                 <br>I hold no legal ownership of the content of this page.
                 <br>Copyright NASA° - ALL RIGHTS RESERVED - 2026

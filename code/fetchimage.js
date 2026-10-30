@@ -1,13 +1,17 @@
 let currentImageIndex = 0;
 let images = [];
+//let apodkey = "DEMO_KEY";
 
-
-fetch('https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=cwtgnChFmL9cQGpQMprjF9JGnmjpTdWGJcjNrMkM')
+function fetchimage(apodkey){
+    if (apodkey == null){apodkey = "DEMO_KEY";};
+    fetch(`https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=${apodkey}`)
     .then((data) => data.json())
     .then((data) => {
         images = data;
         loadInfo(0);
     });
+    console.log("api key in use : ", apodkey);
+};
 
 function loadInfo(index) {
     // fonction de clamp matématique. histoire d'éviter de sotir de l'array.
@@ -22,7 +26,6 @@ function loadInfo(index) {
             newImage.id = "media-image";
             newImage.src = "CX";
             newImage.alt = "CX";
-            newImage.width = "700";
             elem.replaceWith(newImage);
         };
         document.getElementById('media-image').src = images[currentImageIndex].hdurl;
@@ -36,8 +39,8 @@ function loadInfo(index) {
         const newIframe = document.createElement('iframe');
         newIframe.src = src;
         newIframe.id = "media-image";
-        newIframe.width = "700";
-        newIframe.height = "500";
+        newIframe.width = 1200;
+        newIframe.height = 700;
 
         oldImageFrame.replaceWith(newIframe);
     }
@@ -56,7 +59,7 @@ function loadInfo(index) {
     //Chargement du Titre de la page
     document.getElementById("title").textContent = "KATA - APOD " + images[currentImageIndex].date;
     //Chargement du sub-Link de redirection
-    document.getElementById("imagelink").href = images[currentImageIndex].hdurl;
+    document.getElementById("imagelink").href = images[currentImageIndex].url;
 }
 
 function webExtractIframeSource(inputString) {
@@ -72,7 +75,6 @@ function webExtractIframeSource(inputString) {
 
     const result = "https://" + match;
     return result;
-
 }
 
 function errorMessage() {
@@ -101,3 +103,10 @@ function prevImg() {
 function nextImg() {
     loadInfo(currentImageIndex - 1);
 }
+
+function addApiKey() {
+    var APIKEY = prompt("What is your NASA APOD API Key");
+    fetchimage(APIKEY);
+}
+
+fetchimage();
