@@ -1,16 +1,33 @@
 let currentImageIndex = 0;
 let images = [];
-//let apodkey = "DEMO_KEY";
+let apodURL = 0;
+
+//URLSEARCHPARAMS
+let params = new URLSearchParams(document.location.search);
+let date = params.get("date");
 
 function fetchimage(apodkey){
-    if (apodkey == null){apodkey = "DEMO_KEY";};
-    fetch(`https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=${apodkey}`)
+
+    apodURL = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
+
+    if (apodkey != null){
+        apodURL = apodURL + "?api_key=" + apodkey;
+    }
+    else{
+        apodkey = "DEMO_KEY";
+    };
+    if (date != null) {
+        apodURL = apodURL + "?date_from=" + date + "&date_to=" + getDate();
+    } else {};
+
+
+    fetch(apodURL)
     .then((data) => data.json())
     .then((data) => {
         images = data;
         loadInfo(0);
     });
-    console.log("api key in use : ", apodkey);
+    console.log("api key in use : ", apodkey, "\n current URL : " + apodURL);
 };
 
 function loadInfo(index) {
@@ -96,6 +113,19 @@ function errorMessage() {
         oldImageFrame.replaceWith(newElement);
 }
 
+function getDate(){
+    const now = new Date();
+    const yy = String(now.getFullYear()).slice(-2);
+    const mm = String(now.getMonth() + 1).padStart(2, "0");
+    const dd = String(now.getDate()).padStart(2, "0");
+    const stamp = `${yy}${mm}${dd}`;
+
+    const prior = now.setDate(now.getDate() - 24);
+
+    console.log("today is : ", stamp + ", yesterday was " + prior);
+    return stamp;
+}
+
 function prevImg() {
     loadInfo(currentImageIndex + 1);
 }
@@ -105,7 +135,7 @@ function nextImg() {
 }
 
 function addApiKey() {
-    var APIKEY = prompt("What is your NASA APOD API Key");
+    let APIKEY = prompt("What is your NASA APOD API Key");
     fetchimage(APIKEY);
 }
 
