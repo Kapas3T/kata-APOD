@@ -42,20 +42,7 @@ function loadInfo(index) {
         oldImageFrame.replaceWith(newIframe);
     }
     else {
-        //récup de la balise <img> actuelle
-        const oldImageFrame = document.getElementById('media-image');
-        
-        //Préparation d'un nouvel element <a href> pour que le code soit nul, mais proprement nul.
-        const newHrefForTheNewElement = document.createElement('a');
-        newHrefForTheNewElement.href = images[currentImageIndex].url;
-        newHrefForTheNewElement.textContent = "here.";
-
-        //écriture du message
-        const newElement = document.createElement('p');
-        newElement.id = "media-image";
-        newElement.innerHTML = "Sorry, we do not support this kind of media.<br> However, you can still access this media ", newHrefForTheNewElement;
-
-        oldImageFrame.replaceWith(newIframe);
+        errorMessage();
     };  
 
     //Chargement du titre
@@ -94,15 +81,17 @@ function errorMessage() {
         
         //Préparation d'un nouvel element <a href> pour que le code soit nul, mais proprement nul.
         const newHrefForTheNewElement = document.createElement('a');
-        newHrefForTheNewElement.href = images[currentImageIndex].url;
+        newHrefForTheNewElement.href = images[currentImageIndex].url;   
         newHrefForTheNewElement.textContent = "here.";
+
+        console.log(newHrefForTheNewElement);
 
         //écriture du message
         const newElement = document.createElement('p');
         newElement.id = "media-image";
-        newElement.innerHTML = "Sorry, we do not support this kind of media.<br> However, you can still access this media ", newHrefForTheNewElement;
+        newElement.innerHTML = "Sorry, we do not support this kind of media.<br> However, you can still access this media by clicking on this link.";
 
-        oldImageFrame.replaceWith(newIframe);
+        oldImageFrame.replaceWith(newElement);
 }
 
 function prevImg() {

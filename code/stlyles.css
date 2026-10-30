@@ -59,3 +59,12 @@ body {
     text-align: center;
     justify-content: center;
 }
+
+.mainmediabox {
+    text-align: center;
+    width: 1200px;
+    max-width:1200px;
+    height: 700px;
+    max-height: 700px;
+    display: inline-block;
+}
