@@ -104,6 +104,7 @@ n'est qu'un moyen parmis beaucoup d'autres.
       ci-dessous
 
 ## Je l'ai fait 💪
+- [@Kapas3T](https://github.com/Azecko): [code](https://github.com/Kapas3T/Kata-APOD) / [app](https://kapas3t.github.io/Kata-APOD/code)
 
 - [@Azecko](https://github.com/Azecko): [code](https://github.com/Azecko/Kata-APOD) / [app](https://azecko.github.io/Kata-APOD/)  
   jQuery FTW
