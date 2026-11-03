@@ -95,7 +95,7 @@ n'est qu'un moyen parmis beaucoup d'autres.
       spécifique) pour la partager
 - [ ] Il est possible d'accéder à l'APOD d'une date précise en la spécifiant 
       dans l'URL (par exemple `?date=2024-09-10`)
-- [ ] L'application offre la possibilité de gérer la clé d'API  
+- [x] L'application offre la possibilité de gérer la clé d'API  
       (l'utilisateur peut mettre sa propre clé plutôt que DEMO_KEY)
 
 ### Et pour finir

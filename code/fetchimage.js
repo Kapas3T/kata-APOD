@@ -2,6 +2,8 @@ let currentImageIndex = 0;
 let images = [];
 let apodURL = 0;
 
+// Where i left off? -> currently implementing date parameter in the slug, building the address works, retriveing the date and getting the api to work the way i want is another problem tho...
+
 //URLSEARCHPARAMS
 let params = new URLSearchParams(document.location.search);
 let date = params.get("date");
@@ -17,7 +19,7 @@ function fetchimage(apodkey){
         apodkey = "DEMO_KEY";
     };
     if (date != null) {
-        apodURL = apodURL + "?date_from=" + date + "&date_to=" + getDate();
+        apodURL = apodURL + "?date_from=" + date + "&date_to=" + date;
     } else {};
 
 
@@ -114,14 +116,18 @@ function errorMessage() {
 }
 
 function getDate(){
-    const now = new Date();
-    const yy = String(now.getFullYear()).slice(-2);
-    const mm = String(now.getMonth() + 1).padStart(2, "0");
-    const dd = String(now.getDate()).padStart(2, "0");
-    const stamp = `${yy}${mm}${dd}`;
 
-    const prior = now.setDate(now.getDate() - 24);
+}
 
+function prevImg() {
+    loadInfo(currentImageIndex + 1);
+}
+
+function nextImg() {
+    loadInfo(currentImageIndex - 1);
+}
+
+function addApiKey() {
     console.log("today is : ", stamp + ", yesterday was " + prior);
     return stamp;
 }
